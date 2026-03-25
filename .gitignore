@@ -31,3 +31,9 @@ Cargo.lock
 /vmmsharp/vmmsharp/.vs
 /vmmsharp/vmmsharp/bin
 /vmmsharp/vmmsharp/obj
+includes/leechcore.h
+includes/leechcore_device.h
+includes/leechgrpc.h
+build/
+subprojects/leechcore/
+subprojects/.wraplock
