@@ -70,7 +70,7 @@ VOID MSysCert_GetContext_UserAddSingleCert(_In_ VMM_HANDLE H, _In_ POB_REGISTRY_
     if(!(pCertContext = CertCreateCertificateContext(X509_ASN_ENCODING | PKCS_7_ASN_ENCODING, pb + o, cb + 10))) {
         goto fail;
     }
-    if(!(pObResult = Ob_AllocEx(H, OB_TAG_MOD_CERTIFICATES, LMEM_ZEROINIT, sizeof(MSYSCERT_OB_ENTRY), MSysCert_CallbackCleanup, NULL))) {
+    if(!(pObResult = Ob_AllocEx(H, OB_TAG_MOD_CERTIFICATES, LMEM_ZEROINIT, sizeof(MSYSCERT_OB_ENTRY), (OB_CLEANUP_CB)&MSysCert_CallbackCleanup, NULL))) {
         goto fail;
     }
     // Subject CN
